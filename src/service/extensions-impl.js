@@ -254,7 +254,7 @@ export class Extensions {
       devAssert(!holder.loaded && !holder.error);
       delete this.extensions_[extensionId];
     }
-    el.setAttribute('i-amphtml-loaded-new-version', extensionId);
+    el && el.setAttribute('i-amphtml-loaded-new-version', extensionId);
     const urlParts = parseExtensionUrl(el.src);
     return this.preloadExtension(extensionId, urlParts.extensionVersion);
   }
